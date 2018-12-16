@@ -1,0 +1,15 @@
+<header class="header">
+  <h1><a href="/" class="header__title">百川うさのメモアプリ</a></h1>
+  <input type="button" onclick="location.href='/new'" class="btn" value="追加">
+</header>
+
+<div class="container">
+  <ul class="memo-titles">
+    <% @filenames.each do |filename| %>
+      <% File.open(filename) do |opened_file| %>
+        <% memo = JSON.load(opened_file) %>
+        <li><a href="/memos/<%= memo["id"] %>"><%= memo["title"] %></a></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

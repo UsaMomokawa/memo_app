@@ -1,0 +1,7 @@
+# memo files
+/public/memo_*.json
+
+
+# Bundler specific
+/vendor/bundle/
+/.bundle/
